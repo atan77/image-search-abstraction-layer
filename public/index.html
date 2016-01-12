@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Search microservice</title>
+    <title>Image Search Abstraction Layer microservice</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
     <link href="/css/main.css" rel="stylesheet" type="text/css">
@@ -10,34 +10,45 @@
 <body>
     <div class='container'>
 
-    <h1>FreeCodeCamp API: URL shortener microservice</h1>
+    <h1>FreeCodeCamp API: Image Search Abstraction Layer microservice</h1>
     <blockquote>
         User stories:
-        <ul>1) I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</ul>
-        <ul>2) When I visit that shortened URL, it will redirect me to my original link.</ul>
+        <ul>1) I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</ul>
+        <ul>2) I can paginate through the responses by adding a ?offset=2 parameter to the URL.</ul>
+        <ul>3) I can get a list of the most recently submitted search strings.</ul>
     </blockquote>
 
 
-    <h3>How to create a short url:</h3>
+    <h3>How to create a submit an image search request:</h3>
     <p>Post the url via the address bar</p>
     <p><code>{
-http://s-u.herokuapp.com/new/http://codepen.io/ashleytan/pen/vOqPVa
+https://imagesrch.herokuapp.com/images/millenium falcon
 }</code></p>
-<p>
-  Or submit a url via the input box below
-</p>
+
 <h3>Example output:</h3>
-<code>{"origurl": "http://codepen.io/ashleytan/pen/vOqPVa", "miniurl": "http://s-u.herokuapp.com/6"
-
-}</code>
-
-<h3>How to use the shortened url:</h3>
-<code>http://s-u.herokuapp.com/6
-
+<code>[
+{
+url: "http://atomictoasters.com/wp-content/gallery/random-information/millennium-falcon.jpg",
+snippet: "millennium-falcon",
+thumbnail: "http://ts3.mm.bing.net/th?id=OIP.M8f7d9a89fe9d3023e68f9b6eef0262e4H0&pid=15.1",
+context: "http://atomictoasters.com/2012/05/millenium-falcon-cutaway/"
+},
+{
+url: "http://cdn.batman-news.com/wp-content/uploads/2014/09/millennium-falcon.jpg",
+snippet: "Abrams shows Zack Snyder what the Millennium Falcon would do to ...",
+thumbnail: "http://ts2.mm.bing.net/th?id=OIP.Mf5aa4995e46d6ff44f979c9a7f0b1eb4H0&pid=15.1",
+context: "http://batman-news.com/2014/09/18/j-j-abrams-shows-zack-snyder-millennium-falcon-batmobile-video/"
+}
+]
 </code>
 
-<h3>Will redirect to:</h3>
-<code>http://codepen.io/ashleytan/pen/vOqPVa
+<h3>How to paginate through the responses:</h3>
+<code>{https://imagesrch.herokuapp.com/images/history
+}
+</code>
+
+<h3>How to see the most recently submitted search strings:</h3>
+<code>https://imagesrch.herokuapp.com/images/millenium falcon
 
 </code>
 
