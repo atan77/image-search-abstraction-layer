@@ -28,7 +28,7 @@ app.get('/images/:query', function(req, res) {
 
 var sTermString = encodeURIComponent("'" + req.params.query + "'");
 console.log('we are going to search for: ' + sTermString);
-var offset=req.params.offset;
+var offset=req.query.offset;
 var accKey = process.env.BING_API_KEY;
 
 console.log('this is the accKey ' + accKey);
