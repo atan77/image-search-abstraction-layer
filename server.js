@@ -41,7 +41,7 @@ var options = { method: 'GET',
      '$skip': '0',
      '$format': 'json' },
   headers:
-   { authorization: 'Basic Ojh6LzNYbU9JblViQmRnak1QK3daQlhvbjJQTVdnZi80WlFWL2xyQ0dSZVE9' } };
+   { authorization: 'Basic ' + accKey } };
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
