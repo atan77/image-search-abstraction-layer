@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Search microservice</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class='container'>
+
+    <h1>FreeCodeCamp API: URL shortener microservice</h1>
+    <blockquote>
+        User stories:
+        <ul>1) I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</ul>
+        <ul>2) When I visit that shortened URL, it will redirect me to my original link.</ul>
+    </blockquote>
+
+
+    <h3>How to create a short url:</h3>
+    <p>Post the url via the address bar</p>
+    <p><code>{
+http://s-u.herokuapp.com/new/http://codepen.io/ashleytan/pen/vOqPVa
+}</code></p>
+<p>
+  Or submit a url via the input box below
+</p>
+<h3>Example output:</h3>
+<code>{"origurl": "http://codepen.io/ashleytan/pen/vOqPVa", "miniurl": "http://s-u.herokuapp.com/6"
+
+}</code>
+
+<h3>How to use the shortened url:</h3>
+<code>http://s-u.herokuapp.com/6
+
+</code>
+
+<h3>Will redirect to:</h3>
+<code>http://codepen.io/ashleytan/pen/vOqPVa
+
+</code>
+
+<form name='submiturl' action="/shorturl" method="POST">
+   <p>
+     <h3>Enter a url to shorten</h3>
+   </p>
+   <!--for each movie in the array create a radio button with the movie details -->
+     <p>
+       url to shorten: <input type="text" id="origurl" name="origurl" value="" required/>
+   <input type="submit" value="Submit"/>
+ </p>
+</form>
+    </div>
+<div id="connect" class="connect-style">
+    <div class="row">
+      <div class="col-xs-12 col-md-2">
+        Connect with Ashley at Fluff
+      </div>
+      <div class="col-xs-12 col-md-8">
+
+
+        <div class="socialbottom">
+          <div class="row">
+            <div class="col-xs-6 col-md-2 col-lg-1">
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-2">
+              <a href="http://www.twitter.com/aejan" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-2">
+              <a href="https://github.com/atan77" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-2">
+              <a href="http://www.freecodecamp.com/atan77" target="_blank"><i class="fa fa-fire fa-2x"></i></a>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-2">
+              <a href="http://www.codepen.io/ashleytan/" target="_blank"><i class="fa fa-codepen fa-2x"></i></a>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-2">
+              <a href="https://au.linkedin.com/in/ashley-tan-7309aa4" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+            </div>
+            <div class="col-xs-6 col-md-2 col-lg-2">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-md-2">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
