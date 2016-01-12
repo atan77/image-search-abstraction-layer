@@ -37,7 +37,7 @@ var options = { method: 'GET',
   url: 'http://api.datamarket.azure.com/Bing/Search/Image',
   qs:
    { Query: sTermString,
-     '$top': '10',
+     '$top': '100',
      '$skip': offset,
      '$format': 'json' },
   headers:
