@@ -9,9 +9,9 @@ require('dotenv').load();
 var app = express();
 var imgsrch = require('./schema.js');
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/imgsrch', function(err,connect) {
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/imgsrch', function(err,connect) {
   if(err) return console.log(err);
-  console.log('Mongoose connected ' + process.env.MONGO_URI);
+  console.log('Mongoose connected ' + process.env.MONGOLAB_URI);
 });
 
 mongoose.connection.on('error', function (err) {
